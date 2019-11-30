@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./server.component.css'],
   styles: [`
     .online {
-      color: white;
+      color: yellow;
     }
   `]
 })
