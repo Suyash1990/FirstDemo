@@ -12,7 +12,7 @@ export class CockpitComponent implements OnInit {
   // tslint:disable-next-line: no-output-on-prefix
   @Output() blueprintCreated = new EventEmitter<{ serverName: string, serverContent: string }>();
 
-  @ViewChild('newServerContent',{static: true}) newServerContent: ElementRef;
+  @ViewChild('newServerContent',{static: true}) newServerContentInput: ElementRef;
   //newServerName = '';
   //newServerContent = '';
 
@@ -22,11 +22,11 @@ export class CockpitComponent implements OnInit {
   }
 
   onAddServer(serverName: HTMLInputElement) {
-    this.serverCreated.emit({ serverName: serverName.value, serverContent: this.newServerContent.nativeElement.value });
+    this.serverCreated.emit({ serverName: serverName.value, serverContent: this.newServerContentInput.nativeElement.value });
   }
 
   onAddBlueprint(serverName: HTMLInputElement) {
-    this.blueprintCreated.emit({ serverName: serverName.value, serverContent: this.newServerContent.nativeElement.value });
+    this.blueprintCreated.emit({ serverName: serverName.value, serverContent: this.newServerContentInput.nativeElement.value });
   }
 
 }
